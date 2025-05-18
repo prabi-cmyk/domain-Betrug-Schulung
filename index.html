@@ -1,0 +1,352 @@
+<!--<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domain-Betrug Schulung</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fff; color: #333; }
+    .container { max-width: 800px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+      h1, h2 {
+          color: #cc0000;
+      }
+    .button { display: inline-block; margin: 10px 0; padding: 12px 20px; background-color: #cc0000; color: white; text-decoration: none; border-radius: 5px; }
+    .button:hover { background-color: #004577; }
+    iframe { width: 100%; height: 400px; border: none; border-radius: 10px; }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Schulung: Domain-Betrug erkennen und vermeiden</h1>
+        <h2>1. Einführung</h2>
+        <p>Domain-Betrug ist eine weitverbreitete Methode, mit der Angreifer versuchen, Nutzer auf gefälschte Webseiten zu locken, um Daten zu stehlen oder Schaden anzurichten. In dieser Schulung lernst du, wie du solche Betrugsversuche erkennst und dich davor schützen kannst.</p>
+        <h2>2. Video ansehen</h2>
+        <p>Hier findest du das Schulungsvideo. Klicke auf den Button, um das Video zu starten.</p>
+        <section id="video">
+            <a class="button" href="Video/Vorsicht vor Domain-Betrug! Informationsvideo.mp4">Zum Video springen</a>
+        </section>
+        <h2>3. Zusammenfassungsposter</h2>
+        <p>Hier kannst du die wichtigsten Inhalte als Poster herunterladen:</p>
+        <section id="poster">
+            <a class="button" href="Images/DomainShulungPoster.png" alt="Poster zum Thema Domain-Betrug" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">Poster Ansehen  </a>
+        </section>
+        <a href="Images/DomainShulungPoster.png" download>📄 Poster herunterladen</a>
+        <h2>4. Mini-Quiz</h2>
+        <p>Teste dein Wissen mit unserem kurzen Quiz:</p>
+        <a class="button" href="quiz.html">Zum Quiz</a>
+
+
+    </div>
+</body>
+</html>-->
+<!--<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Domain-Betrug Schulung</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: #1f2937;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        nav {
+            width: 260px;
+            background-color: #1e293b;
+            color: white;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+            nav h2 {
+                font-size: 1.4em;
+                margin-bottom: 40px;
+                font-weight: 600;
+            }
+
+            nav a {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 16px;
+                margin: 8px 0;
+                border-radius: 6px;
+                color: white;
+                text-decoration: none;
+                transition: background 0.3s;
+                font-weight: 500;
+            }
+
+                nav a:hover, nav a.active {
+                    background-color: #334155;
+                }
+
+        .content {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        section {
+            display: none;
+        }
+
+            section.active {
+                display: block;
+                animation: fadeIn 0.3s ease-in-out;
+            }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #1d4ed8;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+            .button:hover {
+                background-color: #2563eb;
+            }
+
+        video, img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .download-link {
+            display: block;
+            margin-top: 10px;
+            color: #1d4ed8;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h2>Domain-Schulung</h2>
+        <a href="#" class="nav-link active" data-target="intro">
+            <i data-feather="info" class="icon"></i> Einführung
+        </a>
+        <a href="#" class="nav-link" data-target="video">
+            <i data-feather="video" class="icon"></i> Video
+        </a>
+        <a href="#" class="nav-link" data-target="poster">
+            <i data-feather="image" class="icon"></i> Poster
+        </a>
+        <a href="#" class="nav-link" data-target="quiz">
+            <i data-feather="help-circle" class="icon"></i> Quiz
+        </a>
+    </nav>
+
+    <div class="content">
+        <section id="intro" class="active">
+            <h1>Einführung</h1>
+            <p>Domain-Betrug ist eine gängige Methode, um Nutzer auf gefälschte Webseiten zu locken. Diese Seiten sehen oft echt aus, dienen aber dazu, Daten zu stehlen oder Schaden anzurichten. In dieser Schulung lernst du, wie du diese Gefahr erkennst und dich schützt.</p>
+        </section>
+
+        <section id="video">
+            <h1>Video ansehen</h1>
+            <p>In diesem Video erfährst du, wie Domain-Betrug funktioniert und worauf du achten solltest.</p>
+            <video controls>
+                <source src="Video/Vorsicht vor Domain-Betrug! Informationsvideo.mp4" type="video/mp4">
+                Dein Browser unterstützt das Video nicht.
+            </video>
+        </section>
+
+        <section id="poster">
+            <h1>Zusammenfassungsposter</h1>
+            <p>Hier findest du ein übersichtliches Poster mit den wichtigsten Informationen zum Thema Domain-Betrug.</p>
+            <img src="Images/DomainShulungPoster.png" alt="Poster zum Thema Domain-Betrug">
+            <a href="Images/DomainShulungPoster.png" download class="download-link">📄 Poster herunterladen</a>
+        </section>
+
+        <section id="quiz">
+            <h1>Quiz</h1>
+            <p>Teste dein Wissen mit einem kurzen Quiz zum Thema Domain-Betrug:</p>
+            <a href="quiz.html" class="button">Quiz starten</a>
+        </section>
+    </div>
+
+    <script>
+        feather.replace();
+
+        const links = document.querySelectorAll(".nav-link");
+        const sections = document.querySelectorAll("section");
+
+        links.forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+
+                links.forEach(l => l.classList.remove("active"));
+                link.classList.add("active");
+
+                const targetId = link.dataset.target;
+                sections.forEach(section => {
+                    section.classList.remove("active");
+                    if (section.id === targetId) {
+                        section.classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Domain-Betrug Schulung</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f7f7f7;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+            padding: 40px;
+        }
+
+        h1, h2 {
+            color: black;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 0.3em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 1.8em;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 12px 0;
+            padding: 14px 24px;
+            background-color: #b00020;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+            .button:hover {
+                background-color: #880015;
+            }
+
+        .poster-img {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 12px;
+            border: 1px solid #ccc;
+            margin-top: 15px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💡 Domain-Betrug erkennen und vermeiden</h1>
+
+        <h2>1. Einführung</h2>
+        <p>Domain-Betrug ist eine weitverbreitete Methode, bei der Betrüger täuschend ähnliche Webseiten nutzen, um Nutzer in die Falle zu locken und sensible Daten wie Passwörter oder Bankinformationen abzugreifen.</p>
+
+        <h2>2. Schulungsvideo</h2>
+        <p>Schau dir unser Video an, um mehr über die Tricks der Angreifer zu erfahren.</p>
+        <a class="button" href="Video/Vorsicht vor Domain-Betrug! Informationsvideo.mp4" target="_blank">🎬 Video abspielen</a>
+        <h2>3. Zusammenfassungsposter</h2>
+        <p>Das Poster fasst die wichtigsten Erkennungsmerkmale und Tipps zusammen. Du kannst es ansehen oder herunterladen:</p>
+        <section id="poster">
+            <a class="button" href="Images/DomainShulungPoster.png" alt="Poster zum Thema Domain-Betrug" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">📌Poster Ansehen  </a>
+        </section>
+        <a href="Images/DomainShulungPoster.png" download>📄 Poster herunterladen</a>
+
+       >
+
+
+        <h2>4. Mini-Quiz</h2>
+        <p>Teste dein Wissen mit unserem kurzen Quiz:</p>
+        <a class="button" href="quiz.html">🧠 Zum Quiz</a>
+
+        <footer>
+            © 2025 IT-Schulung | Thema: Domain-Betrug
+        </footer>
+    </div>
+</body>
+</html>

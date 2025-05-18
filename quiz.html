@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quiz: Domain-Betrug</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 10px;
+            background: #f9f9f9;
+        }
+
+        h1 {
+            color: #003366;
+        }
+
+        .question {
+            background: white;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 0 4px rgba(0,0,0,0.1);
+        }
+
+        .answers label {
+            display: block;
+            margin: 6px 0;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #0059b3;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #003d80;
+            }
+
+        .result {
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        #gesamt {
+            font-size: 1.2em;
+            margin-top: 25px;
+            padding: 15px;
+            background: #e6f2ff;
+            border-radius: 6px;
+            border: 1px solid #99ccff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz: Domain-Betrug</h1>
+    <form id="quizForm">
+        <div class="question" data-qid="1">
+            <p>1. Eine Domain kann nur von staatlichen Stellen registriert werden.</p>
+            <div class="answers">
+                <label><input type="radio" name="q1" value="wahr" /> Wahr</label>
+                <label><input type="radio" name="q1" value="falsch" /> Falsch</label>
+            </div>
+            <div class="result"></div>
+        </div>
+
+        <div class="question" data-qid="2">
+            <p>2. Phishing-Domains nutzen oft ähnliche Buchstaben wie echte Domains.</p>
+            <div class="answers">
+                <label><input type="radio" name="q2" value="wahr" /> Wahr</label>
+                <label><input type="radio" name="q2" value="falsch" /> Falsch</label>
+            </div>
+            <div class="result"></div>
+        </div>
+
+        <div class="question" data-qid="3">
+            <p>3. HTTPS schützt automatisch vor Betrug.</p>
+            <div class="answers">
+                <label><input type="radio" name="q3" value="wahr" /> Wahr</label>
+                <label><input type="radio" name="q3" value="falsch" /> Falsch</label>
+            </div>
+            <div class="result"></div>
+        </div>
+
+        <div class="question" data-qid="4">
+            <p>4. Typosquatting ist eine Betrugsform mit ähnlichen Domainnamen.</p>
+            <div class="answers">
+                <label><input type="radio" name="q4" value="wahr" /> Wahr</label>
+                <label><input type="radio" name="q4" value="falsch" /> Falsch</label>
+            </div>
+            <div class="result"></div>
+        </div>
+
+        <div class="question" data-qid="5">
+            <p>5. Es ist egal, ob eine Domain ungewöhnlich viele Bindestriche enthält.</p>
+            <div class="answers">
+                <label><input type="radio" name="q5" value="wahr" /> Wahr</label>
+                <label><input type="radio" name="q5" value="falsch" /> Falsch</label>
+            </div>
+            <div class="result"></div>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Antwort prüfen</button>
+    </form>
+
+    <div id="gesamt"></div>
+
+    <script>
+        const answers = {
+            q1: "falsch",
+            q2: "wahr",
+            q3: "falsch",
+            q4: "wahr",
+            q5: "falsch"
+        };
+
+        const explanations = {
+            q1: "❗️Eine Domain kann von jedem privat registriert werden, z.B. bei Anbietern wie GoDaddy oder 1&1.",
+            q2: "❗️Phishing-Domains nutzen oft ähnliche Buchstaben, z.B. paypa1.com (statt paypal.com), oder pаypal.com (kyrillisches 'a' statt lateinisches 'a').",
+            q3: "❗️HTTPS verschlüsselt die Verbindung, schützt aber nicht vor betrügerischen Inhalten oder gefälschten Seiten.",
+            q4: "❗️Typosquatting bedeutet, dass Betrüger Domains registrieren, die Tippfehler oder ähnliche Schreibweisen nutzen, z.B. goggle.com statt google.com.",
+            q5: "❗️Domains mit vielen Bindestrichen wirken oft verdächtig, z.B. bank-sicherheit-login.com kann eine Phishing-Seite sein."
+        };
+
+        function checkAnswers() {
+            const form = document.getElementById("quizForm");
+            let score = 0;
+            const total = Object.keys(answers).length;
+
+            for (const qid in answers) {
+                const options = form.elements[qid];
+                let selected = null;
+
+                for (const option of options) {
+                    if (option.checked) {
+                        selected = option.value;
+                        break;
+                    }
+                }
+
+                const resultDiv = form.querySelector(`.question[data-qid="${qid.slice(1)}"] .result`);
+
+                if (!selected) {
+                    resultDiv.textContent = "Bitte eine Antwort auswählen.";
+                    resultDiv.className = "result incorrect";
+                    continue;
+                }
+
+                if (selected === answers[qid]) {
+                    resultDiv.textContent = "✅ Richtig! " + explanations[qid];
+                    resultDiv.className = "result correct";
+                    score++;
+                } else {
+                    const correctText = answers[qid] === "wahr" ? "Wahr" : "Falsch";
+                    resultDiv.textContent = `❌ Falsch! Richtige Antwort: ${correctText}. ` + explanations[qid];
+                    resultDiv.className = "result incorrect";
+                }
+            }
+
+            document.getElementById("gesamt").textContent = `Du hast ${score} von ${total} Fragen richtig!`;
+        }
+    </script>
+</body>
+</html>
